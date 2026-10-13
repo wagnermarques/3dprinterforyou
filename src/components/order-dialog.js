@@ -211,6 +211,7 @@ export class OrderDialog extends LitElement {
       material: c.material || 'PLA',
       colorName: c.color?.name || 'Bambu Green',
       colorHex: c.color?.hex || '#00AE42',
+      customizationText: c.customizationText || '',
       quality: c.quality?.name || '0.20mm',
       infill: c.infill || '15%',
       scale: c.scale || 100,
@@ -286,6 +287,13 @@ export class OrderDialog extends LitElement {
               <span class="pill">
                 <strong>Qtd:</strong> ${c.quantity || 1}x
               </span>
+              ${c.customizationText
+                ? html`
+                    <span class="pill" style="border-color: #ff9800; background: rgba(255, 152, 0, 0.12)">
+                      <strong style="color: #ff9800">Personalização:</strong> ${c.customizationText}
+                    </span>
+                  `
+                : ''}
             </div>
           </div>
 

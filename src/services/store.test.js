@@ -59,11 +59,12 @@ describe('SitePrint3D Domain & Store', () => {
 
   it('generates a pre-formatted WhatsApp link', () => {
     const order = orderStore.create({
-      modelTitle: 'Flexi Rex',
+      modelTitle: 'Escudo de Mesa 3D do Seu Time do Coração',
       material: 'PLA',
-      colorName: 'Bambu Green',
+      colorName: 'Lava Red',
+      customizationText: 'Flamengo',
       quality: '0.20mm',
-      quantity: 2,
+      quantity: 1,
       customerName: 'Wagner',
       customerPhone: '11999999999',
       deliveryType: 'Retirada no estúdio',
@@ -72,6 +73,15 @@ describe('SitePrint3D Domain & Store', () => {
     const url = orderStore.generateWhatsAppUrl(order)
     expect(url).toContain('api.whatsapp.com/send?text=')
     expect(decodeURIComponent(url)).toContain(order.id)
-    expect(decodeURIComponent(url)).toContain('Flexi Rex')
+    expect(decodeURIComponent(url)).toContain('Flamengo')
+  })
+
+  it('contains emotional categories: sports, music, pets and pop-culture', () => {
+    expect(MODELS.some((m) => m.category === 'sports')).toBe(true)
+    expect(MODELS.some((m) => m.category === 'music')).toBe(true)
+    expect(MODELS.some((m) => m.category === 'memories')).toBe(true)
+    expect(MODELS.some((m) => m.id === 'team-crest-3d')).toBe(true)
+    expect(MODELS.some((m) => m.id === 'spotify-code-keychain')).toBe(true)
+    expect(MODELS.some((m) => m.id === 'custom-pet-keychain')).toBe(true)
   })
 })

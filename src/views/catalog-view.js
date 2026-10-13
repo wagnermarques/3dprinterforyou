@@ -295,13 +295,13 @@ export class CatalogView extends LitElement {
     return html`
       <div class="hero">
         <div class="hero-badge">
-          <md-icon style="--md-icon-size: 16px">precision_manufacturing</md-icon>
-          Bambu Lab A1 3D Print Studio
+          <md-icon style="--md-icon-size: 16px">favorite</md-icon>
+          Paixões em 3D • Bambu Lab A1 Studio
         </div>
-        <h1 class="hero-title">Escolha seu Modelo 3D Gratuito e <span>Peça a Impressão</span></h1>
+        <h1 class="hero-title">Dê Vida às Suas Paixões: <span>Times, Música, Pets & Geek</span></h1>
         <p class="hero-subtitle">
-          Catálogo curado de modelos 3D livres (MakerWorld & Printables) prontos para imprimir na nossa
-          Bambu Lab A1 com alta velocidade (500 mm/s), acabamento texturizado e precisão de fábrica.
+          Escolha modelos 3D carregados de sentimento e significado (escudos de clubes, chaveiros Spotify Code escaneáveis,
+          homenagens a pets e ícones da música e do cinema) ou encomende peças personalizadas na nossa Bambu Lab A1.
         </p>
 
         <div class="hero-specs">

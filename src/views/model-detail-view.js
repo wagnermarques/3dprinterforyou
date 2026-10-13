@@ -13,6 +13,7 @@ export class ModelDetailView extends LitElement {
     selectedInfill: { type: String },
     scale: { type: Number },
     quantity: { type: Number },
+    customizationText: { type: String },
     notes: { type: String },
     dialogOpen: { type: Boolean },
   }
@@ -130,6 +131,19 @@ export class ModelDetailView extends LitElement {
       line-height: 1.6;
       color: var(--md-sys-color-on-surface);
       margin: 0;
+    }
+
+    .personalization-card {
+      background: rgba(255, 152, 0, 0.08);
+      border: 2px dashed #ff9800;
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 6px;
+    }
+
+    .personalization-card .section-title {
+      margin-top: 0;
+      color: #e65100;
     }
 
     .section-title {
@@ -310,6 +324,7 @@ export class ModelDetailView extends LitElement {
     this.selectedInfill = '15%'
     this.scale = 100
     this.quantity = 1
+    this.customizationText = ''
     this.notes = ''
     this.dialogOpen = false
   }
@@ -370,6 +385,24 @@ export class ModelDetailView extends LitElement {
             <h1>${m.title}</h1>
             <p class="description">${m.description}</p>
           </div>
+
+          ${m.emotionalPrompt
+            ? html`
+                <div class="personalization-card">
+                  <div class="section-title">
+                    <md-icon style="color: #ff9800">favorite</md-icon>
+                    Personalização Afetiva & Especial
+                  </div>
+                  <div class="field-label">${m.emotionalPrompt}</div>
+                  <input
+                    type="text"
+                    placeholder="Digite sua personalização aqui..."
+                    .value=${this.customizationText}
+                    @input=${(e) => (this.customizationText = e.target.value)}
+                  />
+                </div>
+              `
+            : ''}
 
           <!-- 1. Material -->
           <div>
@@ -497,6 +530,7 @@ export class ModelDetailView extends LitElement {
           infill: this.selectedInfill,
           scale: this.scale,
           quantity: this.quantity,
+          customizationText: this.customizationText,
           notes: this.notes,
         }}
         @close=${() => (this.dialogOpen = false)}

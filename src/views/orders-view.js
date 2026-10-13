@@ -411,6 +411,12 @@ export class OrdersView extends LitElement {
                 <div class="order-body">
                   <div>
                     <div class="model-title">${order.modelTitle}</div>
+                    ${order.customizationText
+                      ? html`<div style="font-size: 0.9rem; color: #e65100; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                          <md-icon style="--md-icon-size: 18px; color: #ff9800">favorite</md-icon>
+                          Personalização: ${order.customizationText}
+                        </div>`
+                      : ''}
                     <div class="order-tags">
                       <span class="order-tag">
                         <strong>Material:</strong> ${order.material}
