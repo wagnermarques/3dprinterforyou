@@ -6,6 +6,7 @@ export default defineConfig(
   mergeConfig(
     appshellConfig({
       ...appshell,
+      base: process.env.VITE_BASE || (process.env.NODE_ENV === 'production' ? '/3dprinterforyou/' : '/'),
       manifest: {
         name: 'SitePrint 3D — Bambu Lab A1',
         short_name: 'SitePrint3D',
