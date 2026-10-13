@@ -1,0 +1,3 @@
+[submodule "appshell"]
+	path = appshell
+	url = https://github.com/wagnermarques/fzl-fund-appshell--lit

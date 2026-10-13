@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="bambuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00AE42" />
+      <stop offset="100%" stop-color="#007F31" />
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="10" fill="#141923" />
+  <!-- 3D Print Cube Isometric Wireframe -->
+  <path d="M24 8 L39 16 L24 24 L9 16 Z" fill="url(#bambuGrad)" opacity="0.9" />
+  <path d="M9 16 L24 24 L24 39 L9 31 Z" fill="#008c35" opacity="0.8" />
+  <path d="M39 16 L24 24 L24 39 L39 31 Z" fill="#00c84c" opacity="0.7" />
+  <!-- Nozzle indicator -->
+  <polygon points="24,4 27,9 21,9" fill="#FFC107" />
+</svg>

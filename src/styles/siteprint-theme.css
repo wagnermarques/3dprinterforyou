@@ -1,0 +1,43 @@
+/* Estilos complementares e variáveis específicas do SitePrint 3D / Bambu Lab A1 */
+
+:root {
+  --bambu-green: #00ae42;
+  --bambu-green-dark: #007f31;
+  --bambu-green-light: #e8f8ed;
+  --bambu-accent: #ff6d00;
+  --bambu-bed-pei: #f59e0b;
+}
+
+/* Garante renderização fluida e tipografia consistente */
+.siteprint-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 16px 20px 80px;
+}
+
+/* Badges e tags */
+.badge-bambu {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 174, 66, 0.12);
+  color: var(--bambu-green);
+  border: 1px solid rgba(0, 174, 66, 0.25);
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  border: 1px solid var(--md-sys-color-outline);
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
